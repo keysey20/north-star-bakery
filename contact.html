@@ -1,64 +1,49 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | North Star Bakery</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-
-    <!-- Website Header -->
     <header>
         <h1>North Star Bakery</h1>
         <p>Freshly baked with love every day.</p>
     </header>
 
-    <!-- Main Navigation -->
     <nav aria-label="Main navigation">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="products.html">Products</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li>
-                <a href="contact.html" aria-current="page">
-                    Contact
-                </a>
-            </li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
     <main>
-
-        <!-- Contact Introduction -->
         <section>
             <h2>Contact North Star Bakery</h2>
-
             <p>
                 Thank you for visiting North Star Bakery!
-                We love hearing from our customers and
-                look forward to helping you with questions,
-                product information, and preorder inquiries.
+                We love hearing from our customers and look
+                forward to helping you with questions, product
+                information, and preorder inquiries.
             </p>
-
             <p>
-                Whether you are planning a birthday,
-                family gathering, or simply looking
-                for fresh bakery products, we are
-                happy to help.
+                Whether you are planning a birthday, family
+                gathering, or simply looking for fresh bakery
+                products, we are happy to help.
             </p>
         </section>
 
-        <!-- Bakery Information -->
         <section>
             <h2>Visit Our Bakery</h2>
 
             <h3>Location</h3>
-
             <p>
                 North Star Bakery<br>
                 Your Local Neighborhood Bakery<br>
@@ -66,330 +51,238 @@
             </p>
 
             <h3>Business Hours</h3>
-
             <p>
-                Please contact our bakery to confirm
-                current operating hours, holiday
-                schedules, and product availability.
+                Please contact our bakery to confirm current
+                operating hours, holiday schedules, and
+                product availability.
             </p>
 
             <h3>Customer Service</h3>
-
             <p>
-                Our team welcomes inquiries about
-                breads, pastries, cakes, special
-                occasions, and pickup arrangements.
+                Our team welcomes inquiries about breads,
+                pastries, cakes, special occasions, and
+                pickup arrangements.
             </p>
         </section>
 
-        <!-- Contact Form -->
         <section>
             <h2>Customer Inquiry and Preorder Form</h2>
-
             <p>
-                Please complete the form below
-                to ask a question or request
-                information about a bakery preorder.
+                Complete the form below to ask a question
+                or request information about a bakery preorder.
             </p>
+            <p>Fields marked with an asterisk (*) are required.</p>
 
-            <p>
-                Fields marked with an asterisk (*)
-                are required.
-            </p>
+            <form id="bakery-contact-form"
+                  action="#"
+                  method="get"
+                  novalidate>
 
-            <form action="#" method="get">
-
-                <!-- Personal Information -->
                 <fieldset>
                     <legend>Customer Information</legend>
 
                     <p>
-                        <label for="full-name">
-                            Full Name *
-                        </label>
-                        <br>
-
-                        <input
-                            type="text"
-                            id="full-name"
-                            name="full_name"
-                            autocomplete="name"
-                            minlength="2"
-                            maxlength="100"
-                            required>
+                        <label for="full-name">Full Name *</label><br>
+                        <input type="text"
+                               id="full-name"
+                               name="full_name"
+                               autocomplete="name"
+                               minlength="2"
+                               maxlength="100"
+                               required>
+                        <span class="field-error"
+                              id="full-name-error"
+                              role="alert"></span>
                     </p>
 
                     <p>
-                        <label for="email">
-                            Email Address *
-                        </label>
-                        <br>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            autocomplete="email"
-                            required>
+                        <label for="email">Email Address *</label><br>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               autocomplete="email"
+                               required>
+                        <span class="field-error"
+                              id="email-error"
+                              role="alert"></span>
                     </p>
 
                     <p>
-                        <label for="phone">
-                            Phone Number
-                        </label>
-                        <br>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            autocomplete="tel">
+                        <label for="phone">Phone Number</label><br>
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               autocomplete="tel">
                     </p>
-
                 </fieldset>
 
-                <!-- Inquiry Details -->
                 <fieldset>
                     <legend>Inquiry Details</legend>
 
                     <p>
-                        <label for="inquiry-type">
-                            Type of Inquiry *
-                        </label>
-                        <br>
+                        <label for="inquiry-type">Type of Inquiry *</label><br>
+                        <select id="inquiry-type"
+                                name="inquiry_type"
+                                required>
+                            <option value="">Select an inquiry type</option>
+                            <option value="general">General Question</option>
+                            <option value="product">Product Information</option>
+                            <option value="preorder">Preorder Inquiry</option>
+                            <option value="cake">Custom Cake Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="field-error"
+                              id="inquiry-type-error"
+                              role="alert"></span>
+                    </p>
 
-                        <select
-                            id="inquiry-type"
-                            name="inquiry_type"
-                            required>
-
-                            <option value="">
-                                Select an inquiry type
-                            </option>
-
-                            <option value="general">
-                                General Question
-                            </option>
-
-                            <option value="product">
-                                Product Information
-                            </option>
-
-                            <option value="preorder">
-                                Preorder Inquiry
-                            </option>
-
-                            <option value="cake">
-                                Custom Cake Inquiry
-                            </option>
-
-                            <option value="other">
-                                Other
-                            </option>
-
+                    <p>
+                        <label for="product">Product of Interest</label><br>
+                        <select id="product" name="product">
+                            <option value="">Select a product</option>
+                            <option value="artisan-bread">Artisan Bread</option>
+                            <option value="signature-loaf">Signature Homemade Loaf</option>
+                            <option value="pastries">Fresh Pastries</option>
+                            <option value="celebration-cake">Celebration Cake</option>
+                            <option value="custom-order">Custom Bakery Order</option>
                         </select>
                     </p>
 
                     <p>
-                        <label for="product">
-                            Product of Interest
-                        </label>
-                        <br>
-
-                        <select
-                            id="product"
-                            name="product">
-
-                            <option value="">
-                                Select a product
-                            </option>
-
-                            <option value="artisan-bread">
-                                Artisan Bread
-                            </option>
-
-                            <option value="signature-loaf">
-                                Signature Homemade Loaf
-                            </option>
-
-                            <option value="pastries">
-                                Fresh Pastries
-                            </option>
-
-                            <option value="celebration-cake">
-                                Celebration Cake
-                            </option>
-
-                            <option value="custom-order">
-                                Custom Bakery Order
-                            </option>
-
-                        </select>
+                        <label for="pickup-date">Preferred Pickup Date</label><br>
+                        <input type="date"
+                               id="pickup-date"
+                               name="pickup_date">
                     </p>
 
                     <p>
-                        <label for="pickup-date">
-                            Preferred Pickup Date
-                        </label>
-                        <br>
-
-                        <input
-                            type="date"
-                            id="pickup-date"
-                            name="pickup_date">
+                        <label for="quantity">Estimated Quantity</label><br>
+                        <input type="number"
+                               id="quantity"
+                               name="quantity"
+                               min="1"
+                               max="100">
+                        <span class="field-error"
+                              id="quantity-error"
+                              role="alert"></span>
                     </p>
-
-                    <p>
-                        <label for="quantity">
-                            Estimated Quantity
-                        </label>
-                        <br>
-
-                        <input
-                            type="number"
-                            id="quantity"
-                            name="quantity"
-                            min="1"
-                            max="100">
-                    </p>
-
                 </fieldset>
 
-                <!-- Customer Message -->
                 <fieldset>
                     <legend>Your Message</legend>
 
                     <p>
                         <label for="message">
                             Questions or Order Details *
-                        </label>
-                        <br>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            cols="45"
-                            minlength="10"
-                            maxlength="1000"
-                            placeholder="Tell us about your inquiry or preorder request."
-                            required></textarea>
+                        </label><br>
+                        <textarea id="message"
+                                  name="message"
+                                  rows="6"
+                                  cols="45"
+                                  minlength="10"
+                                  maxlength="1000"
+                                  placeholder="Tell us about your inquiry or preorder request."
+                                  required></textarea>
+                        <span class="field-error"
+                              id="message-error"
+                              role="alert"></span>
                     </p>
-
                 </fieldset>
 
-                <!-- Contact Preference -->
                 <fieldset>
                     <legend>Preferred Contact Method</legend>
 
                     <p>
-                        <input
-                            type="radio"
-                            id="contact-email"
-                            name="contact_method"
-                            value="email"
-                            checked>
-
-                        <label for="contact-email">
-                            Email
-                        </label>
+                        <input type="radio"
+                               id="contact-email"
+                               name="contact_method"
+                               value="email"
+                               checked>
+                        <label for="contact-email">Email</label>
                     </p>
 
                     <p>
-                        <input
-                            type="radio"
-                            id="contact-phone"
-                            name="contact_method"
-                            value="phone">
-
-                        <label for="contact-phone">
-                            Phone
-                        </label>
+                        <input type="radio"
+                               id="contact-phone"
+                               name="contact_method"
+                               value="phone">
+                        <label for="contact-phone">Phone</label>
                     </p>
-
                 </fieldset>
 
-                <!-- Form Buttons -->
-                <p>
-                    <button type="submit">
-                        Submit Inquiry
-                    </button>
+                <section class="interactive-summary"
+                         aria-labelledby="summary-heading">
+                    <h3 id="summary-heading">
+                        Your Live Preorder Summary
+                    </h3>
+                    <p>
+                        Choose an inquiry type, product, quantity,
+                        or pickup date to see your summary update.
+                    </p>
+                    <pre id="preorder-summary"
+                         aria-live="polite"></pre>
+                </section>
 
-                    <button type="reset">
-                        Clear Form
-                    </button>
+                <p id="storage-feedback"
+                   aria-live="polite"></p>
+
+                <p>
+                    <button type="submit">Submit Inquiry</button>
+                    <button type="reset">Clear Form</button>
                 </p>
 
+                <p id="form-feedback"
+                   aria-live="polite"></p>
             </form>
 
             <p>
                 <strong>Important:</strong>
-                This form is a demonstration for
-                the North Star Bakery website project.
-                It uses built-in HTML validation
-                but does not send information
-                to an actual bakery.
+                This form is a demonstration for the
+                North Star Bakery website project.
+                JavaScript validates the information,
+                but no inquiry is transmitted to a bakery.
+                Only selected preferences are saved
+                locally in the customer's browser.
             </p>
-
         </section>
 
-        <!-- Preorder Information -->
         <section>
             <h2>Planning a Special Occasion?</h2>
-
             <p>
-                North Star Bakery welcomes inquiries
-                for birthdays, celebrations, family
-                gatherings, and other special events.
+                North Star Bakery welcomes inquiries for
+                birthdays, celebrations, family gatherings,
+                and other special events.
             </p>
-
             <p>
-                When requesting a preorder,
-                please provide details about
-                your preferred products,
-                estimated quantities,
-                and desired pickup date.
+                When requesting a preorder, please provide
+                details about your preferred products,
+                estimated quantities, and desired pickup date.
             </p>
-
             <p>
-                Our team looks forward to
-                helping you explore your options.
+                Our team looks forward to helping you
+                explore your options.
             </p>
         </section>
 
-        <!-- Product Link -->
         <section>
             <h2>Explore Our Products</h2>
-
             <p>
-                Looking for fresh bread,
-                delicious pastries, or
-                handcrafted cakes?
+                Looking for fresh bread, delicious pastries,
+                or handcrafted cakes?
             </p>
-
             <p>
-                Visit our products page
-                to learn more about our
-                bakery selections.
+                Visit our products page to learn more
+                about our bakery selections.
             </p>
-
             <p>
-                <a href="products.html">
-                    View Our Bakery Products
-                </a>
+                <a href="products.html">View Our Bakery Products</a>
             </p>
         </section>
-
     </main>
 
-    <!-- Website Footer -->
     <footer>
         <p>&copy; 2026 North Star Bakery.</p>
-
-        <p>
-            Fresh bread, warm smiles,
-            and community.
-        </p>
+        <p>Fresh bread, warm smiles, and community.</p>
 
         <nav aria-label="Footer navigation">
             <a href="index.html">Home</a> |
@@ -398,6 +291,5 @@
             <a href="contact.html">Contact</a>
         </nav>
     </footer>
-
 </body>
 </html>
